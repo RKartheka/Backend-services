@@ -1,6 +1,7 @@
-from django.urls import path
-from .views import ChatAPIView
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('chat/', ChatAPIView.as_view(), name='chat'),
+    path('admin/', admin.site.urls),
+    path('api/', include('chat.urls')),
 ]
